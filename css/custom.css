@@ -1,0 +1,12 @@
+.container {
+    max-width: none;
+    padding-right: 10%;
+}
+
+.widget-about .logo{
+    max-width: 10em;
+}
+
+.site-header .header-info {
+    display: none;
+  }

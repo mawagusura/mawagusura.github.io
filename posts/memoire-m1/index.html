@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang='fr'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Eco-conception et intégration des problématiques de performance énergétique dans les processus de développement logiciel Mémoire rédigé par Amaury LUCAS
+Apprenti au sein d&rsquo;IBM - étudiant ingénieur à l&rsquo;EFREI
+Avec le soutien de :
+ Boris LIGER, Maitre d&rsquo;apprentissage Christian KHOURY, Tuteur enseignant Virginie GALLET, responsable CFA Didier ACHVAR, responsable EFREI  Introduction La deuxième moitié du 20e siècle marque l&rsquo;avènement d&rsquo;un nouveau mode de pensée économique et politique, dont la genèse se trouve dans le rapport du Club de Rome, publié en 1972 1.'>
+<meta name='theme-color' content='#333F50'>
+
+<meta property='og:title' content='Mémoire année M1 • Amaury L.'>
+<meta property='og:description' content='Eco-conception et intégration des problématiques de performance énergétique dans les processus de développement logiciel Mémoire rédigé par Amaury LUCAS
+Apprenti au sein d&rsquo;IBM - étudiant ingénieur à l&rsquo;EFREI
+Avec le soutien de :
+ Boris LIGER, Maitre d&rsquo;apprentissage Christian KHOURY, Tuteur enseignant Virginie GALLET, responsable CFA Didier ACHVAR, responsable EFREI  Introduction La deuxième moitié du 20e siècle marque l&rsquo;avènement d&rsquo;un nouveau mode de pensée économique et politique, dont la genèse se trouve dans le rapport du Club de Rome, publié en 1972 1.'>
+<meta property='og:url' content='https://mawagusura.github.io/posts/memoire-m1/'>
+<meta property='og:site_name' content='Amaury L.'>
+<meta property='og:type' content='article'><meta property='article:section' content='posts'><meta property='article:published_time' content='2019-07-10T17:00:05&#43;02:00'/><meta property='article:modified_time' content='2020-04-14T17:00:05&#43;02:00'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.69.0" />
+
+  <title>Mémoire année M1 • Amaury L.</title>
+  <link rel='canonical' href='https://mawagusura.github.io/posts/memoire-m1/'>
+  
+  
+  <link rel='icon' href='/none'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#333F50;}
+</style>
+
+  
+
+</head>
+<body class='page type-posts has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Aller au menu principal</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/gopherize_momo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      Amaury L.
+      </a>
+    </h2>
+    <div class='desc'>
+    Welcome to my personal website
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Menu de la barre latérale'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Accueil</a></li><li class='item'>
+  <a href='/portfolio/'>Portfolio</a></li><li class='item'>
+  <a href='/posts/'>Articles</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/Mawagusura' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Ouvrir Github dans un nouvel onglet</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://gitlab.com/Mawagusura' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Ouvrir Gitlab dans un nouvel onglet</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://twitter.com/Mawagusura' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Ouvrir Twitter dans un nouvel onglet</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:amaury-lucas@orange.fr' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contacter par mail</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/amaury.lucas' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Ouvrir Linkedin dans un nouvel onglet</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section></div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><a class='screen-reader-text' href='#content'>Aller au contenu</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Déplier la barre latérale</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button><div class='header-widgets'>
+        <div class='container'>
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/'>Accueil</a></li><li><a href='/posts/'>Articles</a></li><li><span>Mémoire année M1</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Amaury L.</p><p class='desc site-desc'>Site personnel</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='fr' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Mémoire année M1</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Publié le </span>
+  <time class='entry-date' datetime='2019-07-10T17:00:05&#43;02:00'>2019, Jul 10</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+36 minutes de lecture
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <h1 id="eco-conception-et-intégration-des-problématiques-de-performance-énergétique-dans-les-processus-de-développement-logiciel">Eco-conception et intégration des problématiques de performance énergétique dans les processus de développement logiciel</h1>
+<p>Mémoire rédigé par Amaury LUCAS</p>
+<p>Apprenti au sein d&rsquo;IBM - étudiant ingénieur à l&rsquo;EFREI</p>
+<p>Avec le soutien de :</p>
+<ul>
+<li>Boris LIGER, Maitre d&rsquo;apprentissage</li>
+<li>Christian KHOURY, Tuteur enseignant</li>
+<li>Virginie GALLET, responsable CFA</li>
+<li>Didier ACHVAR, responsable EFREI</li>
+</ul>
+<h1 id="introduction">Introduction</h1>
+<p>La deuxième moitié du 20e siècle marque l&rsquo;avènement d&rsquo;un nouveau mode de pensée économique et politique, dont la genèse se trouve dans le rapport du Club de Rome, publié en 1972 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Ce rapport constate que les évolutions économiques et industrielles du début du siècle ont des impacts négatifs importants sur l&rsquo;environnement et l'équilibre social et sociétal.
+Il s&rsquo;est alors dessiné une convergence mondiale pour la reconnaissance des impacts environnementaux induits par le mode de vie de la civilisation humaine  (en témoigne les nombreux sommets internationaux regroupant les chefs d'états du monde entier qui se sont tenus ces 50 dernières années, des &ldquo;Sommets de la Terre&rdquo; aux &ldquo;Conference Of Parties&rdquo; - COP).
+Dans le même temps sera développé le concept de développement durable, apparu pour la première fois dans le rapport Bruntland <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, publié en 1987 par la Commission mondiale sur l’environnement et le développement de l&rsquo;ONU (Organisation des Nations Unies). Ce mode de développement économique permet d&rsquo;avoir des outils pour répondre aux enjeux sociétaux cruciaux nouvellement identifiés. Il sera universellement reconnu et adopté comme un moyen de préserver la planète.</p>
+<p>Législations, méthodes de conceptions, recyclage&hellip; Les questions environnementales ont par la suite non seulement pris de l&rsquo;importance au sein des organisations et des entreprises, mais elles sont même devenues des obligations légales pour nombres d&rsquo;industries (industrie automobile par exemple), notamment en France et en Europe. Et pour cause, les impacts à long terme sur les générations futures pourraient être dramatiques si rien n&rsquo;est fait : pollution de l&rsquo;air, réchauffement climatique, acidification de l&rsquo;air, raréfaction d&rsquo;eau potable&hellip; et les conséquences de ces phénomènes physiques sur notre mode de vie sont nombreuses (santé, migration, énergie, etc).</p>
+<p>Si la très grande majorité des industries ont adopté puis appliqué petit à petit  les principes du développement durable, le secteur des TIC (Technologies de l&rsquo;Information et des Communications), qui a émergé puis explosé durant ces 50 dernières années, est resté quand à lui complètement étanche à ces principes : l&rsquo;aspect faussement immatériel de ce secteur ayant très certainement joué en la défaveur de la mise en place de ces derniers.</p>
+<p>A l&rsquo;heure où les enjeux environnementaux n&rsquo;ont jamais été aussi importants, et où le secteur des TIC s&rsquo;est désormais imposé comme fer de lance de l'économie mondiale (9 des 10 plus grosses entreprises mondiales appartiennent au secteur des TIC <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> ), où en est le niveau de maturité environnemental du secteur ? Où en sont les démarches dites de Green-IT ?</p>
+<h1 id="état-de-lart">État de l&rsquo;art</h1>
+<p>Avant toute chose, un constat s&rsquo;impose : en 2015, les TICs représentent 10% de la consommation électrique mondiale, et ce chiffre est en hausse de 9% chaque année. C&rsquo;est aujourd&rsquo;hui le seul secteur dont la hausse est si importante. Dans une étude publiée en 2015 et menée par Andrae &amp; Edler, dont les chiffres ci dessus sont tirés, les auteurs ont établis 3 scénarios d’évolution de la consommation énergétique du Numérique de 2010 à 2030 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> (un &ldquo;meilleur des cas&rdquo;, un &ldquo;attendu&rdquo; et un &ldquo;pire des cas&rdquo;), en se basant sur un modèle qu&rsquo;ils ont défini et des données jusqu'à 2013.
+En 2018 , le groupe de réflexion The shift project a publié un rapport, &ldquo;Lean ICT - Pour une sobriété numérique&rdquo; <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, dans lequel il actualise les scénarios de Andrae &amp; Edler avec les dernières données récoltées pour voir de quel scénario nous sommes le plus proche, et le résultat n&rsquo;est pas très optimiste. En effet, sur les années 2013 - 2017, la consommation énergétique des TIC s&rsquo;est montrée bien au dessus du scénario &ldquo;attendu&rdquo; de Andrae et Edler (nous sommes à mi chemin entre le scénario &ldquo;attendu&rdquo; et le scénario &ldquo;pire des cas&rdquo;). Ainsi, d&rsquo;ici à 2025,le secteur des TIC pourrait représenter 6% des émissions de gaz à effet de serre mondiales, soit 2 fois plus que l&rsquo;aviation civile par exemple (3,2% en 2017 selon l&rsquo;Agence Internationale de l'énergie <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>).
+De fait dans le secteur des TIC, les enjeux économiques et environnementaux sont liés.
+En effet, la quasi totalité des équipements du secteur sont alimentés en énergie grâce à l'électricité.
+Rappelons que l&rsquo;unité de mesure de la consommation des équipements informatiques est le Kilowattheures  (kWh) : il correspond à la quantité d'énergie électrique consommée. Lorsque l&rsquo;on mesure et compare des consommations, on utilise donc cette unité (ou des multiples tel que le Megawattheures - MWh). Néanmoins, la consommation électrique n&rsquo;a pas en soi d&rsquo;impact sur l&rsquo;environnement, ce sont plutôt les moyens de production électriques qui eux peuvent en avoir.
+Or, ces mêmes moyens de production électrique dans le monde mobilisent majoritairement des ressources fossiles (charbon, pétrole, gaz) et génèrent donc des gaz à effets de serres : en 2018, 64% de la production électrique provient d'énergies primaires fossiles selon les chiffres de l&rsquo;Agence Internationale de l'énergie  <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>. Les gaz à effet de serre (GES) comprennent le dioxyde de carbone CO<!-- raw HTML omitted -->2<!-- raw HTML omitted -->, le méthane CH^4^, et le protoxyde d&rsquo;azote N~2~O (pour les plus importants d&rsquo;entre eux), et l&rsquo;unité de mesure utilisée est le kilogramme. Les GES contribuent au réchauffement climatique car ils ont un forçage radiatif fort, c&rsquo;est à dire qu&rsquo;ils participent à la conservation de l'énergie dans le système Terre plutôt qu'à la libération dans l&rsquo;espace.
+Chaque GES a un effet différent sur le réchauffement global : leurs effets se mesurent donc en équivalent CO<!-- raw HTML omitted -->2<!-- raw HTML omitted --> (noté CO<!-- raw HTML omitted -->2<!-- raw HTML omitted -->e et aussi appelé potentiel de réchauffement global PRG) pour uniformiser les valeurs. On parlera donc de g CO<!-- raw HTML omitted -->2<!-- raw HTML omitted -->e ou g eq CO<!-- raw HTML omitted -->2<!-- raw HTML omitted -->.</p>
+<p>Néanmoins, chaque pays possède un mix de production électrique différent : en France par exemple en 2018, les moyens de production fossile ont représenté 7,1% de la production totale selon RTE France <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>. Il faut donc, lors de l'étude des consommations électriques, considérer dans quel pays on se trouve pour évaluer les impacts environnementaux engendrés.</p>
+<p>La réduction de consommation électrique des équipements réduit également la facture des organisations qui les utilisent.
+C&rsquo;est pourquoi les travaux d&rsquo;optimisation des équipements informatiques remontent à avant même le &ldquo;réveil écologique&rdquo; du monde professionnel : les industriels y voyaient une piste de réduction des coûts d&rsquo;infrastructure.
+La recherche s&rsquo;est donc surtout focalisée sur l&rsquo;amélioration de l&rsquo;efficience énergétique des composants matériels, à cause de la combinaison de deux facteurs, comme le démontre une étude menée par Google et publiée en 2007 <sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>. Premièrement, ils montrent que les ressources processeurs (CPU) des serveurs sont le plus souvent utilisée entre 20% et 50% de leur maximum, en examinant plus de 5000 serveurs sur une période de 6 mois. Ensuite, ils comparent le pourcentage d&rsquo;utilisation du serveur (en utilisant différentes métriques telles que le nombre de requête HTTP par seconde, le nombre de processus actifs et le pourcentage d&rsquo;utilisation du CPU) à la consommation électrique du serveur : ils montrent que la consommation électrique suit une fonction affine, donc non linéaire. En conséquence, un serveur ayant un taux d&rsquo;utilisation presque nul consomme tout de même 50% d'électricité par rapport à sa consommation maximale.
+L&rsquo;efficience énergétique, définie dans cette étude comme le pourcentage de consommation électrique (par rapport à la consommation maximale) divisé par le pourcentage d&rsquo;utilisation du serveur, est donc faible pour les taux d&rsquo;utilisations constatés dans la vie réelle (entre 20% et 50% la plupart du temps). Autrement dit, l'énergie est &ldquo;gâchée&rdquo;.</p>
+<p>Des initiatives ont donc été lancées, soit par les institutions (Etats, Union Européenne, etc), soit par les professionnels eux même pour améliorer cette efficience (entendre ici efficience énergétique générale des équipements). On peut citer par exemple EnergyStar <sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>, éco-label lancé en 1992 aux Etats-Unis par la U.S. Environmental Protection Agency (EPA), puis importé en Europe dans les années 2000. Ce label a pour but d&rsquo;assurer l&rsquo;efficience énergétique des équipements informatiques divers. Autre exemple, le programme 80plus <sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>, qui certifie que les blocs d&rsquo;alimentation électrique des équipements (ordinateurs personnels notamment) convertissent au moins 80% de l'énergie reçue pour l&rsquo;utilisation des composants et non en chaleur par effet Joule.
+Sur le plan institutionnel, des directives ont été instaurées en Union Européenne notamment, que les constructeurs d'équipements doivent respecter. On peut citer par exemple RoHS (Restriction of hazardous substances), WEEE (Waste Electronic and Electrical Equipment) ou Reach (<em>Registration, Evaluation, Authorization and restriction of CHemicals</em>), bien que ces directives ne concernent pas directement la consommation d'énergie des composants.
+Enfin, de plus vastes programmes tel que le Climate Servers Computing <sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup>, lancé par l&rsquo;ONG WWF et Google en 2007, ont reçu le soutien des plus grandes entreprises du secteur pour contenir les émissions de gaz à effet de serre de la filière à horizon 2030.</p>
+<p>Et il faut dire que cela a porté ses fruits, la consommation d'énergie unitaire des équipements a considérablement baissé, si bien que de nombreux appareils fonctionnent aujourd&rsquo;hui sur batterie avec une puissance de calcul importante et dont l&rsquo;autonomie est raisonnable, chose complètement impensable il y a de cela encore 30 ans.</p>
+<p>Néanmoins, et nous l&rsquo;avons vu plus haut, la consommation électrique du secteur est en constante hausse. Cela s&rsquo;explique de plusieurs manières:</p>
+<p>1 - La démocratisation du numérique. Le changement de paradigme s&rsquo;est initié à la fin des années 90. Là ou le matériel informatique était principalement la propriété des entreprises, il s&rsquo;est petit à petit démocratisé au point ou aujourd&rsquo;hui il est extrêmement improbable de croiser quelqu&rsquo;un n&rsquo;ayant pas un smartphone, un ordinateur, ou une télévision (pour ne citer que ces équipements). Ce changement de paradigme, couplé aux mauvaises habitudes des consommateurs (ne jamais éteindre ses appareils par exemple), ont considérablement augmenté les impacts environnementaux des TIC. Une étude menée au Canada en 1994 a montré que mettre des post-it pour rappeler aux utilisateurs d'éteindre leurs équipements a permis de réduire la consommation électrique de 14%, tandis que mettre en place un arrêt automatique des machines selon des plages horaires a permis de réduire la consommation de 63% <sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup>. Si ces mesures peuvent être prises à l'échelle d&rsquo;une entreprise, cela semble en revanche compliqué chez les particuliers.</p>
+<p>2 - La loi empirique de With statue : &ldquo;Les logiciels ralentissent plus vite que le matériel n&rsquo;accélère&rdquo;. Outre la formulation quelque peu humoristique, cette loi soulève un aspect très intéressant et trop souvent négligé. La complexité, la taille ou le poids de nos solutions informatiques ne cessent de grandir et, avec elles, les ressources matérielles nécessaires à leur traitement, donc a fortiori leur consommation énergétique. Certains parlent même aujourd&rsquo;hui du phénomène &ldquo;d&rsquo;obésiciel&rdquo;, pour obésité-logicielle. En effet, les éditeurs n&rsquo;ont cessé de superposer les couches applicatives, contrairement aux fabricants de matériels qui ont su innover depuis maintenant plusieurs années sur l’efficience des équipements.
+A titre d&rsquo;exemple, Frédéric Bordage, précurseur du Green-IT et fondateur du site greenit.fr, a calculé que le couple &ldquo;Windows 8 - Office 2013&rdquo; nécessite un CPU cadencé à une fréquence 15 fois plus grande que le couple &ldquo;Windows 98 - Office 97&rdquo; et a besoin de 114 fois plus de mémoire vive RAM <sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup>.</p>
+<p>Ces deux premières explications illustrent ce que l&rsquo;on nomme &ldquo;l&rsquo;effet rebond&rdquo; : l’augmentation de consommation liée à la réduction des limites à l’utilisation d’une technologie. Les ressources informatiques telles que la RAM et le CPU sont devenues moins chères, plus abondantes et plus efficaces, ce qui a poussé les développeurs à concevoir des services numériques beaucoup plus gourmands.</p>
+<p>3 - L&rsquo;argument économique pour la réduction de la consommation pour les entreprises n&rsquo;est valable que pour la partie serveur des applications (par exemple pour le Web). Or, avec la multiplication des terminaux et l&rsquo;essor du Web notamment, et plus récemment de l&rsquo;IoT (Internet of Things), la partie serveur ne représente qu&rsquo;une petite partie des ressources globales utilisées pour l&rsquo;application. Selon l&rsquo;association The Green Code Lab, dans son étude Web Energy Archive parue en 2014 <sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>, la partie serveur d&rsquo;un site web consommerait plus de 10 fois moins que les terminaux clients accédant au site. Or, faire un client &ldquo;léger&rdquo;, c&rsquo;est à dire alléger le composant logiciel qui sera exécuté sur la machine du client, n&rsquo;a aucun intérêt économique pour l&rsquo;entreprise (hors analyse fonctionnelle). L&rsquo;ADEME (Agence de l’environnement et de la maîtrise de l’énergie) a elle aussi publié un livre blanc <sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup> dans lequel elle indique que 47% des émissions de gaz à effet de serres des TIC sont issues des équipements des consommateurs (sur l&rsquo;ensemble du cycle de vie).</p>
+<p>Par ailleurs, si des acteurs ont très tôt cherché à minimiser les consommations induites par le secteur des TIC, comme on l&rsquo;a vu précédemment, ces derniers sont restés assez marginaux et cantonnés à l&rsquo;optimisation du matériel. Or, la prise en compte des impacts environnementaux d&rsquo;un produit ou d&rsquo;un service doit se faire dès la conception de ce dernier. En effet, les choix de conception ont une responsabilité majeure dans les externalités négatives générées lors de la vie du produit ou service.</p>
+<p>C&rsquo;est pourquoi d&rsquo;autres industries, historiquement beaucoup plus polluantes que le secteur des TIC, ont développé des méthodes dites d'éco-conception : l&rsquo;empreinte environnementale du service ou produit est intégrée dès la phase de conception de ce dernier et ce dans le but de réduire les impacts générés tout au long de son cycle de vie. L&rsquo;Organisation mondiale de normalisation (ISO) a dans ce sens publié la série de normes ISO 14000 <sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup>, relatives au management environnemental, qui s&rsquo;adresse aux organisations cherchant à maîtriser leurs impacts sur l&rsquo;environnement.</p>
+<p>L'éco-conception appliquée aux services numériques implique donc de fait les développeurs et plus généralement toutes les équipes participant à la conception d&rsquo;un produit ou service. Et cela fait sens : le matériel, aussi optimisé soit-il, n&rsquo;existe que pour exécuter les ordres dictés par les programmes. Or, comme vu précédemment,  la consommation électrique est directement corrélée à la sollicitation des composants. On définit alors la consommation des logiciels par l'énergie utilisée par le matériel suite à une requête du logiciel.</p>
+<p>En parallèle des optimisations matérielles, quelques pistes logicielles ont tout de même été exploitées, comme par exemple une étude menée par Irish &amp; Christensen publiée en 2000 <sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup> proposant un protocole réseau TCP/IP modifié pour diminuer la consommation des équipements non utilisés mais devant rester connectés au réseau. Mais bien que le changement du protocole réseau implique des changements dans les implémentations logicielles, il ne s&rsquo;agit pas d&rsquo;une application ou programme informatique, ni de la mise en place des méthodes d'éco-conception.</p>
+<p>Une synthèse sur l'état de l&rsquo;art en terme d&rsquo;efficience énergétique logicielle, publiée en 2015 par des chercheurs de l&rsquo;université de Pernambuco <sup id="fnref:18"><a href="#fn:18" class="footnote-ref" role="doc-noteref">18</a></sup>, a analyser les publications dans les plus grandes conférences dédiées au logiciel (telles que les conférences ICSE, ESEC/FSE, &hellip;) en y cherchant les termes &ldquo;power&rdquo; (puissance) et &ldquo;energy&rdquo; (énergie) dans les titres et abstracts. Il n&rsquo;ont trouvé que 14 publications, et dont la plus récente date de 2012. Cela montre que le sujet est émergeant et encore trop peu approfondi.</p>
+<p>Enfin, il est à noter que dans le but de réduire la consommation énergétique des logiciels, il faut déjà pouvoir mesurer cette dernière. Or, nous verrons par la suite que cette question reste aujourd&rsquo;hui ouverte, sans qu&rsquo;une solution n&rsquo;ait été adoptée consensuellement par le secteur.</p>
+<p>Ce contexte nous amène donc donc à nous poser le questionnement suivant :</p>
+<h1 id="problématique">Problématique</h1>
+<p>En quoi l&rsquo;intégration de la performance énergétique des logiciels dans les méthodologies de développements est-elle un enjeu majeur du secteur des TIC au 21e siècle ?</p>
+<h1 id="1----eco-conception-et-analyse-du-cycle-de-vie-dune-solution-logicielle">1 -  Eco-conception et Analyse du cycle de vie d&rsquo;une solution logicielle</h1>
+<p>L'éco-conception s&rsquo;est imposée dans de très nombreux secteurs, comme une démarche ayant de nombreuses retombées positives. Outre les gains environnementaux, ces démarches permettent notamment la réduction des coûts de production, l&rsquo;anticipation des réglementations environnementales futures, la différenciation vis-à-vis des concurrents ou encore l&rsquo;amélioration de l&rsquo;image de l&rsquo;entreprise.</p>
+<p>Cependant, dans le domaine de l&rsquo;informatique logicielle, rien n&rsquo;est fait, ou presque. Pourtant, les avantages d&rsquo;une démarche d'éco-conception appliquée au logiciel sont bien réels. On est alors en droit de se demander : Pourquoi cela n&rsquo;est pas adopté par les acteurs du secteur ?</p>
+<p>Plusieurs facteurs jouent et ont pu joué dans la non-adoption de telles démarches, mais le principal réside dans la spécificité du logiciel : ce n&rsquo;est ni un bien manufacturé, ni un service (au sens strict), ni un procédé. Par ailleurs, le couplage matériel/logiciel est fort pour un service numérique. Ce statut si particulier du programme informatique a considérablement compliqué les démarches d'éco-conception : les outils génériques et trans-domaines sont plus difficilement applicables.</p>
+<p>Frédéric Bordage, avec l&rsquo;ADEME et l&rsquo;Alliance Green IT notamment, ont publié &ldquo;Eco-conception web : les 115 bonnes pratiques&rdquo;. Ce recueil de bonnes pratiques est utile pour l'éco-conception logicielle, mais comment mesurer clairement les impacts d&rsquo;un site Web ? Les métriques habituellement utilisées sont le poids d&rsquo;une page web et le nombre de requêtes HTTP, entre autres, mais ces métriques sont trop abstraites, incomplètes et propres au domaine du Web.</p>
+<p>Hors la mesure est le point de départ de toute éco-conception.</p>
+<p>Parmi l&rsquo;attirail d&rsquo;outils génériques et trans-domaines utilisés pour éco-concevoir, l&rsquo;Analyse du Cycle de Vie (ACV, LCA en anglais) est sans nul doutes le plus incontournable et le plus central. L&rsquo;ACV est une méthodologie standardisée (ISO14040 et ISO14044 notamment) qui permet d’évaluer les impacts environnementaux de biens manufacturés, services et procédés et ceci de façon globale et complète.
+L&rsquo;ACV comptabilise 4 catégories de dommages envers l&rsquo;environnement :</p>
+<ul>
+<li>santé humaine (DALY)</li>
+<li>qualité des éco systèmes (PDF.m².an)</li>
+<li>changement climatique (kg Eq CO2)</li>
+<li>consommation de ressource (MJ énergie primaire).</li>
+</ul>
+<p>L&rsquo;ACV est apparue pour la première fois en 1969, initiée par l&rsquo;industriel Coca-Cola afin de trancher entre l&rsquo;utilisation de bouteilles en verre ou de bouteilles en plastiques. Afin d&rsquo;avoir une vision ensembliste et systémique, ils ont comparé les deux contenants sur l&rsquo;ensemble du cycle de vie, que l&rsquo;on généralise désormais de la sorte :</p>
+<ul>
+<li>Etude de la conception du produit ;</li>
+<li>L’extraction des matières premières ;</li>
+<li>Le processus de fabrication et de conditionnement ;</li>
+<li>Le processus logistique et d’acheminement ;</li>
+<li>L’usage du produit ;</li>
+<li>La fin de vie (démontage, transport, tri, recyclage, déchets).</li>
+</ul>
+<p>Ce fut la genèse de cette approche, plus tard reprise par d&rsquo;autres industriels, puis formalisée en outil pour l'éco-conception.</p>
+<p>La startup nantaise GreenSpector propose une méthode spécifique pour effectuer une Analyse du Cycle de Vie et qui adresse les problèmes habituellement rencontrés lors de l&rsquo;utilisation de cet outil avec les produits logiciels.
+Définir une méthodologie d&rsquo;ACV spécifique aux logiciels se justifie par le fait que cette catégorie de produits, souvent considérés à tort comme purement immatériels, présentent des spécificités par rapport aux produits dits « matériels ».
+Ce caractère pseudo immatériel est central dans les questions environnementales liées aux logiciels. C&rsquo;est notamment la raison pour laquelle on entends parler de service numérique plutôt que de logiciel : au niveau sémantique, le service est plus global, et inclut la nécessité de disposer du matériel et des composants logiciels requis tel que le système d&rsquo;exploitation.
+Quoi qu&rsquo;il en soit, la difficulté réside dans la définition du périmètre du dit service numérique ou du logiciel.
+Cette pseudo-immatérialité soulève donc des questions quant à la meilleure façon de réaliser une ACV dans ce contexte.</p>
+<p>C&rsquo;est pourquoi GreenSpector a publié conjointement avec Orange et l&rsquo;ADEME le &ldquo;Guide méthodologique pour l&rsquo;ACV des logiciels&rdquo; <sup id="fnref:19"><a href="#fn:19" class="footnote-ref" role="doc-noteref">19</a></sup>, dont les enseignements sont présentés ci-dessous.</p>
+<p>D&rsquo;abord, le cycle de vie d&rsquo;un logiciel diffère grandement de celui d&rsquo;un produit manufacturé classique. En tant que « bien immatériel », un logiciel ne nécessite pas directement d’extraction de matières premières (bien que des ressources matérielles sont nécessaires à son utilisation, nous en reparlerons ci dessous). La phase de fabrication quand à elle, n’est pas envisageable comme un processus de fabrication répété N fois pour produire N exemplaires du produit : il faut plutôt la considérer comme une phase unique permettant d’aboutir à une version du logiciel théoriquement reproductible et réutilisable à l’infini. La phase de conception se confond donc avec celle de fabrication dans ce cas précis, au sens de l&rsquo;ACV.</p>
+<p>On peut donc résumer le cycle de vie du logiciel en 4 étapes :
+-Conception/Fabrication ;
+-Distribution ;
+-Utilisation ;
+-Fin de vie / recyclage.</p>
+<h4 id="conceptionfabrication">Conception/Fabrication</h4>
+<p>La fabrication (processus de conception / développement) est considérée comme une phase unique permettant de produire la solution logicielle. Cette phase intègre tout le processus de conception du logiciel : analyse des besoins, conception, programmation, test, stabilisation, déploiement. Les ressources associées aux maintenances correctives (correction de bug) et les enrichissements fonctionnels, sont à inclure dans cette phase. On comptabilisera également le matériel nécessaire à cette phase (postes de développement, serveurs, &hellip;), les infrastructures tels que les bâtiments et leurs consommations, les déplacements des collaborateurs, etc.</p>
+<h4 id="distribution">Distribution</h4>
+<p>La distribution/copie vers l’utilisateur final : différents scénarios sont possibles, les deux plus répandus étant :</p>
+<ul>
+<li>Téléchargement (Page web par exemple, ou exécutables d&rsquo;installations) ;</li>
+<li>L’utilisateur peut aussi récupérer la licence  dans un commerce ou par courrier postal et télécharger le logiciel. Dans ce cas, le déplacement de l&rsquo;utilisateur est à prendre en compte.
+Dans ces deux cas, on prendra en compte le stockage et l’hébergement ainsi que l&rsquo;utilisation du réseau.</li>
+</ul>
+<h4 id="utilisation">Utilisation</h4>
+<p>L’utilisation du logiciel par l’utilisateur final démarre par la phase de mise en service suite au téléchargement (distribution) par exemple et couvre toute la phase d’usage du logiciel sur le matériel adéquat de l’usager. Le périmètre intègre :</p>
+<ul>
+<li>Le matériel nécessaire ou prérequis pour utiliser le logiciel. Dans ce cas, on prend en compte : la fabrication du matériel (l’équipement de l’utilisateur, accès réseau, accès serveur),  l’utilisation de l’énergie en phase d’usage du matériel (équipement de l’utilisateur, accès réseau et serveur), les logiciels prérequis intégrant leurs consommations de ressources (OS, navigateurs, machines virtuelles, …) ;</li>
+<li>Le logiciel étudié intégrant sa consommation d’énergie ;</li>
+<li>Les données nécessaires pour utiliser le logiciel ou créées par le logiciel et qui sont stockées sur les différentes ressources matérielles comprises dans le périmètre de l’application.</li>
+</ul>
+<h4 id="fin-de-vie--recyclage">Fin de vie / recyclage</h4>
+<p>Là encore, l’ambiguïté matériel/logiciel complique la définition de cette phase.
+Il n’existe pas d’obsolescence intrinsèque à un logiciel. Un logiciel est théoriquement utilisable à l’infini, tant qu’il existe du matériel pour le faire fonctionner. Le logiciel ignore l’usure et ne risque pas de tomber en panne parce qu’il est trop vieux. On ne peut donc pas déterminer une durée de vie d’un logiciel liée au fait que ses composants vont se dégrader au cours du temps (contrairement aux bien manufacturés). Les seules raisons pour un logiciel de devenir obsolète sont des facteurs extérieurs au produit lui-même :</p>
+<ul>
+<li>Décision de l’utilisateur de le supprimer ;</li>
+<li>Politique de maintenance d’une version ;</li>
+<li>Obsolescence des matériels supportant le logiciel ;</li>
+<li>Obsolescence des autres logiciels en interaction avec le logiciel (système d’exploitation, bases de données, navigateur ne supportant plus les anciennes versions HTML/CSS/JS …) ;</li>
+<li>Disparition du besoin.
+Cependant, si le logiciel n&rsquo;a pas de fin en soi, il peut jouer un rôle important dans la fin de vie des équipements sur lesquels il est exécuté. En effet, concevoir des logiciels de plus en plus gourmands en ressources CPU ou RAM par exemple pousse les utilisateurs et les entreprises à renouveler plus souvent le matériel pour suivre les évolutions. L&rsquo;impact environnemental est dans ce cas très fort, car les déchets électroniques sont très peu recyclés : selon la plateforme d&rsquo;opendata européenne Eurostat, seulement 37,1% des déchets d'équipements électriques et électroniques (DEEE) sont recyclés. Les autres finissent dans des décharges en Afrique ou en Asie.</li>
+</ul>
+<p>On ne détaillera pas ici comment calculer tous ces impacts en détail : ce n&rsquo;est pas le but de ce document, les ACV sont réalisées par des logiciels dédiés et spécialisés qui possèdent déjà de nombreux outils pour modéliser de nombreuses externalités (notamment pendant la phase conception/fabrication).</p>
+<p>Néanmoins, la phase utilisation pose deux problèmes difficilement solvables, même par ces logiciels experts.</p>
+<p>Premièrement, dans un contexte d&rsquo;entreprise il peut être possible d&rsquo;estimer la consommation de ressources matérielles induites par un logiciel ou service numérique. Dans certains cas, les équipements ne servent qu'à une, ou un nombre très restreint d&rsquo;applications. Un exemple concret est les applications mobiles des opérateurs de maintenance en industrie qui ne servent qu'à scanner des QR codes. Dans ce cas, le service numérique consistant à scanner des QR codes sur les machines industrielles implique directement l&rsquo;emploi de smartphones pour les opérateurs, smartphones qui seront dédiés à cette application. On peut donc facilement estimer les ressources matérielles que la mise en place de ce service va impliquer.</p>
+<p>En revanche, dans un contexte grand public, ou dans certains cas en entreprise également, les supports matériels et logiciels nécessaires au bon fonctionnement du logiciel développé ne seront pas dédiés à ce dernier, mais auront de nombreux usages. Prenons le cas d&rsquo;un site web par exemple : les supports requis tel que l&rsquo;ordinateur (ou mobile), le navigateur et la connexion internet ne seront pas achetés par le consommateur pour la seule utilisation du site web en question. Notons tout de même que l&rsquo;offre de service peut avoir une influence sur l&rsquo;achat de ces supports par le consommateur, mais ne suffira pas à elle seule à motiver cet achat. Ce sera plutôt l&rsquo;accumulation des offres de services qui poussera le consommateur à effectuer cet achat. Si l&rsquo;analyse ci-dessus se restreint à un contexte socio-économique, ses implications environnementales sont pourtant bien réelles : la mobilisation de ressources matérielles et ses impacts écologiques (raréfaction métaux et terres rares, émission de GES pour extraction et transport, etc.) ne sont, dans un contexte grand public, pas imputable à un seul logiciel ou service numérique, mais à leur accumulation, et une quantification de ce phénomène semble extrêmement complexe, si bien qu&rsquo;on ne peut pas de manière précise estimer l&rsquo;impact en ressources matérielles induit par un logiciel ou service numérique.</p>
+<p>Deuxièmement, comment estimer la consommation électrique du logiciel propre ?</p>
+<p>La formule communément admise dans les études scientifiques pour la consommation énergétique d&rsquo;un logiciel est la suivante :
+$$E_{software} = E_{comp} + E_{com} + E_{infra}$$
+où
+$E_{software} = \text{énergie consommée par le logiciel}$
+$E_{comp}=\text{coût additionnel de calcul (CPU, mémoire, disque, GPU, &hellip;)}$
+$E_{com}=\text{coût d'échange des données au travers du réseau}$
+$E_{infra}=\text{coût additionnel pour l&rsquo;OS et le système (exemple JVM)}$</p>
+<p>Cependant, cette formule n&rsquo;explique pas comment calculer les membres de l'équation ($E_{comp}$,$E_{com}$,$E_{infra}$).
+L&rsquo;approche la plus simple est de faire tourner l'équipement sans le logiciel (on parle alors de mode idle), puis avec le logiciel et de faire la différence pour attribuer au logiciel sa consommation.
+Cependant, les solutions de mesure de la consommation sont diverses et présentent certains avantages et inconvénients.</p>
+<p>Nous étudierons donc dans la prochaine partie quelles solutions choisir pour la mesure de la consommation énergétique des logiciels.</p>
+<h1 id="2---solutions-pour-la-mesure-de-la-consommation-énergétique-des-logiciels">2 - Solutions pour la mesure de la consommation énergétique des logiciels</h1>
+<p>Réduire la consommation électrique des équipements informatiques et réseaux est un enjeu particulièrement crucial au regard de plusieurs facteurs :</p>
+<ul>
+<li>Les émissions de GES engendrées par la production électrique contribuent au réchauffement climatique ;</li>
+<li>Les batteries des différents appareils mobiles (laptop, tablette, téléphones mobiles) sont constituées de métaux rares dont l&rsquo;extraction et l&rsquo;acheminement sont très émettrice en GES ;</li>
+<li>Ces batteries ont une durée de vie qui se calcule en nombre de cycle de recharge (peut différer selon les technologies, certaines technologies telles que les batteries Li-Ion ont une durée de vie fixe), donc réduire la consommation, c&rsquo;est réduire la fréquence de recharge et donc allonger la durée de vie de la batterie <sup id="fnref:20"><a href="#fn:20" class="footnote-ref" role="doc-noteref">20</a></sup>. Cela permet donc d&rsquo;utiliser moins de ressources.</li>
+</ul>
+<p>Plusieurs approches existent pour la mesure de la consommation des solutions logicielles : au niveau hardware, hybride ou software.</p>
+<p>L&rsquo;approche hardware, la plus triviale, consiste à mesurer la puissance utilisée par les composants ou l&rsquo;ensemble des composants, à l&rsquo;aide d&rsquo;un équipement du type wattmètre. Efficace et précise, cette approche est très limitée au vu du coût d&rsquo;installation de ces équipements de mesure et impossible à grande échelle. Par ailleurs, elle ne nous donne aucune indication sur lorigine de la consommation au point de vue software.</p>
+<p>Les approches hybrides nous viennent des constructeurs de composants. Elles consistent à mesurer le taux et la nature d&rsquo;utilisation du composant. Les données récoltées sont extrêmement fiables, mais sont rarement remontées à l&rsquo;OS et ses applications. Elles restent souvent &ldquo;internes&rdquo; au composant en question, ne permettant alors seulement l&rsquo;optimisation de ses propres ressources . Si ces approches sont efficaces, elle relèvent d&rsquo;un périmètre trop restreint pour nous intéresser : seule une vision plus globale sur la consommation propre de tous les composants peut permettre une véritable démarche d'éco-conception. Encore plus, une approche où l&rsquo;on remonterait jusqu&rsquo;au code permettrait une analyse plus fine pour permettre aux développeurs d&rsquo;optimiser énergétiquement leur code, ce que ne permet pas la mesure hybride, ni hardware.</p>
+<p>Néanmoins, certains fabricants comme Intel par exemple mettent à des disposition des bibliothèques, en langage C notamment, pour permettre aux développeurs de récupérer ces informations. Si le système de surveillance reste à l'échelle du composant et interne, il permet tout de même à des acteurs externes de consulter ses résultats. En revanche, une approche de la sorte ne laisse aucun résultat intégré : c&rsquo;est au développeur d&rsquo;utiliser la bibliothèque fournie pour son besoin. Cela représente un certain coût, nécessite une fine connaissance du langage C et de la programmation système, ce que les développeurs d&rsquo;aujourd&rsquo;hui tendent de moins en moins à avoir (car le marché en a moins besoin qu&rsquo;avant).</p>
+<p>Microsoft fut assez précurseur dans l&rsquo;estimation de la consommation énergétique par une approche software en lançant vers la fin des années 2000 le logiciel JouleMeter. JouleMeter propose une interface graphique permettant de constater en temps réel ou sur une période donnée la consommation électrique de la machine sur lequel il s&rsquo;exécute, mais aussi d&rsquo;une application particulière. En revanche, cette solution n&rsquo;est disponible que sur Windows et ne s&rsquo;intègre pas du tout avec d&rsquo;autres composants (impossible de récupérer les données et d&rsquo;interagir). C&rsquo;est donc difficilement industrialisable.</p>
+<p>Par la suite, Microsoft abandonna JouleMeter pour proposer une solution intégrée dans sa plateforme de développement Visual Studio. A partir de Visual Studio 2013, le profileur Consommation d'énergie fut ajouté à l&rsquo;IDE . Il permet aux développeurs de tester leur application en local en monitorant les différentes utilisations des ressources tel que le CPU, le disque, l'écran ou encore le réseau. C&rsquo;est un outil puissant qui pour la première fois s&rsquo;intègre à un outil de développement, mais non open source, dont le fonctionnement est donc resté secret et disponible seulement pour les développements via l&rsquo;IDE Visual Studio. Malheureusement cet outil sera abandonné à son tour par Microsoft, comme expliqué par un des responsables sur le forum StackOverflow suite à une question d&rsquo;un membre du forum <sup id="fnref:21"><a href="#fn:21" class="footnote-ref" role="doc-noteref">21</a></sup>:</p>
+<blockquote>
+<p>We have deprecated the Energy Consumption profiler in VS 2015 and beyond. We found that it wasn’t broadly used and the information it provided wasn’t more of an rough approximation, which had limited usability for most developers.
+Kenneth Auchenberg, Program Manager, Microsoft.</p>
+</blockquote>
+<p>Constatant cette absence d&rsquo;offres efficaces pour la mesure de la consommation électrique des logiciels avec une approche software, une équipe de recherche de l&rsquo;INRIA, Spirals (anciennement ADAM) <sup id="fnref:22"><a href="#fn:22" class="footnote-ref" role="doc-noteref">22</a></sup>, a lancé des travaux de recherches sur ces sujets. Ils ont proposé des outils pour combler le manque.</p>
+<p>L'équipe Spirals a également développé un framework baptisé PowerAPI<sup id="fnref:23"><a href="#fn:23" class="footnote-ref" role="doc-noteref">23</a></sup>. Ce framework marque une rupture dans les outils de mesure de la consommation électrique, et ce pour plusieurs raisons.
+PowerAPI est construit de manière modulaire. On distingue 3 tiers dans son architecture : les capteurs, les formules et la base de données. Les capteurs sont des composants applicatifs qui ont pour fonction de monitorer les appels systèmes effectués sur un composant hardware donné. Ils doivent donc être installés sur la même machine que l&rsquo;application que l&rsquo;on évalue. Les données brutes récoltées par les capteurs sont ensuite envoyées dans une base de données mongoDB.
+Un capteur est donc fortement couplé à l&rsquo;OS et à un composant hardware, pour pouvoir communiquer avec ces derniers.
+Les formules sont des composants applicatifs dont le but est de transformer les données brutes récupérées par les capteurs afin d&rsquo;en estimer la consommation électrique. Ces composants calculent donc, grâce à des modèles, la consommation et ré-insèrent les données finales dans la base de données initiale (ou une autre selon le paramétrage). Deux modes de lecture existent : mode &ldquo;Stream&rdquo;, en lecture continue au fur et à mesure que les capteurs insèrent des données, ou mode &ldquo;Batch&rdquo;, où l&rsquo;exécution est unique et sur un ensemble de données fixe.
+Cette modularité permet donc d&rsquo;adapter les capteurs où les formules selon le besoin. Les développeurs peuvent même contribuer à rajouter des capteurs spécifiques à certains composants ou OS.
+PowerAPI peut s&rsquo;installer simplement via le gestionnaire de paquet python &ldquo;pip&rdquo;, ou via &ldquo;docker&rdquo; (recommandé).
+Les différents modules sont disponibles sur le DockerHub (répertoire de conteneurs) de PowerAPI <sup id="fnref:24"><a href="#fn:24" class="footnote-ref" role="doc-noteref">24</a></sup>.</p>
+<p>PowerAPI, en tant que middleware, est à la base de nombreuses autres applications.</p>
+<p>Jalen, par exemple, est une bibliothèque java qui calcule l'énergie consommée à l'échelle du code <sup id="fnref:25"><a href="#fn:25" class="footnote-ref" role="doc-noteref">25</a></sup>, développée par un chercheur de l&rsquo;université de Lille en partenariat avec l'équipe de l&rsquo;INRIA. Concrètement, un agent java s&rsquo;exécute dans la JVM (Java Virtual Machine : machine virtuelle permettant d&rsquo;exécuter des programmes java) et monitore les applications java qui tournent également dans la même JVM. Jalen analyse les méthodes, threads (fils d&rsquo;exécution), appels disques et appels CPU au runtime (phase d&rsquo;exécution) dans la JVM. Elle utilise PowerAPI pour récupérer un profil de consommation d'énergie, puis effectue une association statistique entre la consommation et son analyse du code au sein de la JVM, pour en déduire la consommation d'énergie  de chaque méthode utilisée. Les résultats sont eux émis dans un fichier CSV, donnant la consommation estimée par PID (Process Identifier, identifiant du processus système) et par méthode. Si l&rsquo;initiative est intéressante, elle se limite néanmoins aux langages s&rsquo;exécutant dans la JVM et présentent d&rsquo;autre défauts, dans l&rsquo;approche même, dont nous parlerons par la suite.</p>
+<p>JalenUnit est une évolution de Jalen, permettant d&rsquo;effectuer des tests unitaires énergétiques sur les méthodes d&rsquo;une application. JalenUnit fonctionne de la même manière que Jalen, mais utilise un injecteur pour exécuter de nombreuses fois les méthodes en changeant les paramètres, et ce de façon automatisée. Il peut alors effectuer un benchmark des méthodes, et produire des graphes de consommation d'énergie selon les paramètres. On évolue donc vers un niveau d&rsquo;automatisation supérieur, fournissant au développeur un service de plus en plus &ldquo;clé en main&rdquo;.</p>
+<p>Les buts finaux de ces initiatives sont de pouvoir montrer aux développeurs les &ldquo;software energy hotspots&rdquo;, c&rsquo;est à dire les parties de l&rsquo;application qui sont sources de consommation d'énergie, qui pourraient donc être optimisées.</p>
+<p>Enfin, WebEnergyArchive <sup id="fnref:26"><a href="#fn:26" class="footnote-ref" role="doc-noteref">26</a></sup> est un projet initié par l&rsquo;association The Green Code Lab, qui oeuvre pour l'éco-conception web et le Green IT. Ce portail web permet d&rsquo;attribuer un score aux sites web, en mesurant la consommation énergétique coté client. Ils utilisent pour cela un service de GreenSpector (la startup dont nous parlions dans la partie 1), lui même basé sur PowerAPI (entre autres).</p>
+<p>On voit donc que des solutions émergent, bien que cela soit tout récent (à partir de 2010 globalement). Ces solutions, bien qu&rsquo;imparfaites, fournissent aux équipes de développement des outils afin d&rsquo;avoir des mesures énergétiques, première étape nécessaire pour pouvoir éco-concevoir les logiciels et services numériques.</p>
+<p>Mais, comment ces outils peuvent-ils être utilisés par les équipes qui conçoivent et/ou réalisent les services numériques ? Nous tenterons d&rsquo;explorer les options dans la prochaine partie.</p>
+<h1 id="intégration-dans-les-méthodes-de-conception-et-de-déploiement">Intégration dans les méthodes de conception et de déploiement</h1>
+<p>Les méthodes de développement des logiciels et services numériques ont beaucoup évoluées depuis l&rsquo;essor de l&rsquo;informatique. En effet, la taille et la complexité des projets informatiques ont explosé, et la réussite des projets informatiques est restée très faible, comme le montre une étude réalisée par l&rsquo;entreprise The Standish Group en 2013 <sup id="fnref:27"><a href="#fn:27" class="footnote-ref" role="doc-noteref">27</a></sup> .</p>
+<p>Selon eux, la réussite des projets informatiques sur la période 1995 - 2010 est bien en deçà des statistiques des autres industries :</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Petits projets (&lt; 1 M$)</th>
+<th align="center">Gros projets (&gt; 1 M$)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Aboutis</td>
+<td align="center">76%</td>
+<td align="center">10%</td>
+</tr>
+<tr>
+<td align="center">Livrés avec retard, dépassement ou périmètre restreint</td>
+<td align="center">20%</td>
+<td align="center">52%</td>
+</tr>
+<tr>
+<td align="center">Echec</td>
+<td align="center">4%</td>
+<td align="center">38%</td>
+</tr>
+</tbody>
+</table>
+<p>Face à ce constat d'échec, de nouvelles méthodes de gestion de projets ont émergé au début des années 2000, à l&rsquo;initiative d&rsquo;experts du domaine plaidant pour une remise en question du secteur et la reconnaissance que l&rsquo;informatique reste une industrie comme les autres et que son taux de réussite ne devrait donc pas être plus faible. Ils publient en 2001 le &ldquo;Manifesto for Agile Software Development&rdquo; <sup id="fnref:28"><a href="#fn:28" class="footnote-ref" role="doc-noteref">28</a></sup>, dans lequel ils posent les bases de ce qui sera par la suite appelé les méthodes agiles (SCRUM, Kanban, etc). Aujourd&rsquo;hui, la plupart des projets informatiques sont menés en suivant les méthodes agiles.</p>
+<p>Un des principes phares des méthodologies agiles est la notion d&rsquo;incrément : fini l&rsquo;effet tunnel où le métier ne découvre la solution que lorsqu&rsquo;elle est terminée,  le développement s&rsquo;effectue désormais de manière itérative, avec un retour permanent de la part du client et de ses équipes métiers. La collaboration de tous les acteurs à toutes les étapes du projet permet d&rsquo;améliorer sa bonne conduite et sa réussite.</p>
+<p>Un autre aspect qui s&rsquo;est développé pour améliorer la réussite des projets est les tests : jusqu&rsquo;alors relégués au second plan, les tests sont alors vu comme un moyen de s&rsquo;assurer de la qualité et de la conformité des projets dont la complexité est grandissante. Couplés aux méthodes agiles, on devient alors en mesure de pouvoir, à chaque livrable, connaitre l'état de qualité de la solution (ou d&rsquo;en faire une estimation).</p>
+<p>L&rsquo;approche DevOps, née à la fin des années 2000 a également fortement contribué à la pénétration des tests dans les projets informatiques. DevOps prône l&rsquo;association des équipes de développement et d&rsquo;exploitation, en posant 4 fondements : Culture, Automatisation, Mesures et Partage. Aujourd&rsquo;hui très en vogue, l&rsquo;approche DevOps, associées aux méthodes agiles, séduit par le dégré de qualité qu&rsquo;elle suggère, via notamment le &ldquo;Continuous Testing&rdquo; : on teste la solution de manière automatisée, fréquente, avant chaque livraison, et de bout en bout. L’objectif est de faire des tests rapidement et fréquents, de vérifier et d&rsquo;assurer la qualité du logiciel plus tôt dans le cycle de vie.</p>
+<p>Il existe plusieurs types de tests, le Comité Français du Test Logiciel <sup id="fnref:29"><a href="#fn:29" class="footnote-ref" role="doc-noteref">29</a></sup> en identifie quatre niveaux : test unitaire, test d’intégration, test système et test d’acceptation.
+Tous ces différents tests n&rsquo;ont pas tous la même pénétration dans les projets informatiques : les tests unitaires, par exemple, sont désormais incontournables, tandis que les tests d&rsquo;acceptation sont plus rarement intégrés dans les processus de développements .
+Enfin, et toujours dans le but d&rsquo;améliorer la qualité des logiciels, des outils de supervision de code comme le très populaire SonarQube, outil dit de &ldquo;Continous Inspection&rdquo;, permettent de s&rsquo;abstraire du contexte d&rsquo;exécution en analysant seulement la syntaxe du code, donc d&rsquo;avoir une analyse de la qualité plus fine et utile pour le développeur.</p>
+<p>Un lecteur avisé aura remarqué qu&rsquo;il n&rsquo;est nulle part fait notion de test  de performance énergétique.</p>
+<p>Et c&rsquo;est là tout l&rsquo;enjeu qui se pose aujourd&rsquo;hui : alors que l&rsquo;on a des solutions qui émergent nous permettant de faire ces tests de performance énergétique (voir partie II), et que les conséquences environnementales du secteur numérique sont plus fortes que jamais (voir précédemment), l&rsquo;intégration des questions de performance énergétiques est un véritable challenge que le secteur entier se doit de relever.
+Si l&rsquo;on a collectivement su développer les outils et méthodes permettant d&rsquo;augmenter la qualité des logiciels,  et que l&rsquo;on voit désormais des tests automatisés dans tous les projets (ou presque), la notion de performance énergétique est quand à elle complètement absente.</p>
+<p>D&rsquo;autant qu&rsquo;encore une fois, des acteurs engagés développent des solutions pour faciliter l&rsquo;intégration de ces tests. On a vu à titre d&rsquo;exemple dans la partie précédente JalenUnit, qui permet une analyse fine du code en effectuant des tests unitaires de performance énergétique. Ce type de tests est un premier pas vers l&rsquo;intégration de la performance énergétiques en permettant aux équipes de développement d'évaluer de manière simple cet indicateur pour leur solution.
+GreenSpector ont quand à eux développé une offre pour tester des applications mobiles en proposant une intégration avec Jenkins, outil aujourd&rsquo;hui incontournable dans les approches DevOps, étant utilisé à très grande échelle. Cette offre permet donc d&rsquo;automatiser les tests énergétiques sur les applications mobiles. Elle propose un suivi complet de l'évolution au fur et à mesure du cycle de vie de l&rsquo;application (en se basant donc sur les Jobs et Pipelines Jenkins), en évaluant les composants les plus gourmands en énergie.</p>
+<p>Mais ces solutions restent peu nombreuses et balbutiantes, rendant donc difficile leur adoption par le monde professionnel.</p>
+<h1 id="discussion">Discussion</h1>
+<p>Nous avons tenté, dans ce document, de présenter succinctement les impacts du numériques et d&rsquo;explorer pourquoi et comment la performance énergétique des logiciels doit être une indicateur à prendre en compte dans tout projet de développement.</p>
+<p>Nous nous sommes focalisés dans ce document sur les aspects &ldquo;techniques&rdquo; de la conception des logiciels. Cependant, il est à noter que le volet le plus efficace pour l'éco-conception d&rsquo;une solution numérique repose sur l&rsquo;aspect fonctionnel : la conception fonctionnelle d&rsquo;un logiciel a des impacts directs sur sa consommation énergétique, et le phénomène d&rsquo;obésiciel que nous avons mentionné plus haut est sans nuls doutes le point le plus important à traiter si le secteur veut pouvoir contrôler l'énergie qu&rsquo;il consomme.</p>
+<p>Nous nous sommes concentrés sur la réduction de la consommation énergétique des logiciels à l&rsquo;utilisation. Hors, cette consommation n&rsquo;est pas le seul impact du secteur : une grosse partie du bilan C0<!-- raw HTML omitted -->2<!-- raw HTML omitted -->e du numérique repose sur l&rsquo;extraction, la transformation et l&rsquo;acheminement des ressources premières nécessaires à la construction des composants matériels, dont notamment les tristement célèbres &ldquo;terres rares&rdquo;. Ces métaux, indispensables à la miniaturisation des composants, et dont les stocks s'épuisent de manière drastique, voient leur transformation du minerai en métal extrêmement polluante.</p>
+<p>La performance énergétique ne doit donc pas être la seule piste à creuser pour adresser les menaces que le numérique fait peser sur l&rsquo;environnement.</p>
+<p>Enfin, on se doit également de souligner que le numérique, s&rsquo;il a des impacts importants sur l&rsquo;environnement, peut également participer à la réduction des externalités environnementales d&rsquo;autres secteurs : citons par exemple les smarts-grid où le numérique peut permettre d&rsquo;alléger le bilan environnemental des bâtiments, quartiers et villes.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>En guise de conclusion, nous avons parcouru donc dans ce document quels étaient les impacts actuels du secteur des TICs sur l&rsquo;environnement, et plus particulièrement sur la consommation énergétique des équipements supports du numérique. Si des optimisations matérielles conséquentes ont été effectuées, la partie logicielle reste balbutiante sur la mise en place de mesures pour la réduction de la consommation énergétique du numérique. L&rsquo;effet rebond que l&rsquo;on observe suite aux avancées des technologies matérielles notamment font grimper l&rsquo;addition énergétique du numérique dans le monde.
+Les méthodes d'éco-conception traditionelles telles que l&rsquo;ACV sont en l'état assez inadaptées aux services numériques, dont le couplage logiciel/matériel complique l'évaluation. C&rsquo;est pourquoi des solutions pour la mesure de la consommation propre à un logiciel émergent, mais ne parviennent pas pour l&rsquo;instant à s&rsquo;offrir une place au sein des équipes de développements dans le milieu professionnel.
+Il faut donc aujourd&rsquo;hui, au regard des impacts environnementaux du numérique et à l&rsquo;image de ce que certains acteurs essayent de faire, permettrent à ces solutions de s&rsquo;intégrer facilement aux méthodes et outils actuellement utilisés, pour que la performance énergétique devienne une métrique primordiale dans l'évaluation de la qualité logicielle.
+Des initiatives politiques se mettent en place, à l&rsquo;image du Label Numérique Responsable<sup id="fnref:30"><a href="#fn:30" class="footnote-ref" role="doc-noteref">30</a></sup> lancé par le Ministère de la Transition Ecologique et Solidaire, dont l&rsquo;axe 5.1 du référentiel traite d'éco-conception logicielle.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Limits of Growth, Club de Rome, 1972, <a href="http://www.donellameadows.org/wp-content/userfiles/Limits-to-Growth-digital-scan-version.pdf">http://www.donellameadows.org/wp-content/userfiles/Limits-to-Growth-digital-scan-version.pdf</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Our common future, 1987, <a href="https://www.diplomatie.gouv.fr/sites/odyssee-developpement-durable/files/5/rapport_brundtland.pdf">https://www.diplomatie.gouv.fr/sites/odyssee-developpement-durable/files/5/rapport_brundtland.pdf</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Brandz top 100 most valuable global Brands, 2019, <a href="http://online.pubhtml5.com/bydd/ksdy/#p=15">http://online.pubhtml5.com/bydd/ksdy/#p=15</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>On Global Electricity Usage of Communication Technology: Trends to 2030, Andrae &amp; Edler, 2015, <a href="https://www.mdpi.com/2078-1547/6/1/117/htm">https://www.mdpi.com/2078-1547/6/1/117/htm</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>LEAN ICT - Pour une sobriété numérique, The Shift Project, 2018, <a href="https://theshiftproject.org/wp-content/uploads/2018/11/Rapport-final-v8-WEB.pdf">https://theshiftproject.org/wp-content/uploads/2018/11/Rapport-final-v8-WEB.pdf</a> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>International Energy Agency, <a href="https://www.iea.org/geco/data/">https://www.iea.org/geco/data/</a> <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7" role="doc-endnote">
+<p>Synthèse production électrique française 2018, RTE France, <a href="https://bilan-electrique-2018.rte-france.com/synthese/">https://bilan-electrique-2018.rte-france.com/synthese/</a> <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8" role="doc-endnote">
+<p>The Case for Energy-Proportional Computing, Barroso &amp; Hölzle, 2007, <a href="https://storage.googleapis.com/pub-tools-public-publication-data/pdf/33387.pdf">https://storage.googleapis.com/pub-tools-public-publication-data/pdf/33387.pdf</a> <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9" role="doc-endnote">
+<p>Label Energy Star, <a href="https://www.energystar.gov/about">https://www.energystar.gov/about</a> <a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10" role="doc-endnote">
+<p>80+ certification, <a href="https://www.plugloadsolutions.com/80PlusPowerSupplies.aspx">https://www.plugloadsolutions.com/80PlusPowerSupplies.aspx</a> <a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:11" role="doc-endnote">
+<p>Climate Servers Computing, aujourd&rsquo;hui renommé The Green Grid, <a href="https://www.thegreengrid.org/">https://www.thegreengrid.org/</a> <a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:12" role="doc-endnote">
+<p>The energy consumption of desktop computers: measurement and savings potential, G.R. Newsham &amp; D.K. Tiller, 1994 ,https://ieeexplore.ieee.org/abstract/document/297924 <a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:13" role="doc-endnote">
+<p>Logiciel : la clé de l’obsolescence programmée du matériel informatique, Frédéric Bordage, 2013, <a href="https://www.greenit.fr/2010/05/24/logiciel-la-cle-de-l-obsolescence-programmee-du-materiel-informatique/">https://www.greenit.fr/2010/05/24/logiciel-la-cle-de-l-obsolescence-programmee-du-materiel-informatique/</a> <a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:14" role="doc-endnote">
+<p>Etude Web Energy Archive, The green code Lab, 2014, <a href="https://www.greencodelab.org/vie-du-green-code-lab/etude-web-energy-archive-la-consommation-energetique-des-sites-web-cote-utilisateur/">https://www.greencodelab.org/vie-du-green-code-lab/etude-web-energy-archive-la-consommation-energetique-des-sites-web-cote-utilisateur/</a> <a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:15" role="doc-endnote">
+<p>La face cachée du numérique, ADEME, 2017, <a href="https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-face-cachee-numerique.pdf">https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-face-cachee-numerique.pdf</a> <a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:16" role="doc-endnote">
+<p>Série de normes ISO 14000, <a href="https://www.iso.org/fr/iso-14001-environmental-management.html">https://www.iso.org/fr/iso-14001-environmental-management.html</a> <a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:17" role="doc-endnote">
+<p>A &ldquo;Green TCP/IP&rdquo; to reduce electricity consumed by computers, Irish &amp; Christensen, 2000, <a href="https://ieeexplore.ieee.org/abstract/document/673356">https://ieeexplore.ieee.org/abstract/document/673356</a> <a href="#fnref:17" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:18" role="doc-endnote">
+<p>Refactoring for Energy Efficiency:A Reflection on the State of the Art, Gustavo Pinto, Francisco Soares-Neto, Fernando Castor, <a href="http://gustavopinto.org/lost+found/greens2015.pdf">http://gustavopinto.org/lost+found/greens2015.pdf</a> <a href="#fnref:18" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:19" role="doc-endnote">
+<p>Guide méthodologique pour l&rsquo;ACV des logiciels, Marc Vautier &amp; Elisabeth Dechenaux &amp; Thierry Leboucq &amp; Olivier Philippot, <a href="https://greenspector.com/downloads/GREENSPECTOR_Guide_Methodologique_ACV_des_Logiciels.pdf">https://greenspector.com/downloads/GREENSPECTOR_Guide_Methodologique_ACV_des_Logiciels.pdf</a>
+*[ACV]: Analyse du cycle de vie <a href="#fnref:19" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:20" role="doc-endnote">
+<p>Batteryuniversity, 2010, <a href="https://batteryuniversity.com/index.php/learn/article/how_to_prolong_lithium_based_batteries">https://batteryuniversity.com/index.php/learn/article/how_to_prolong_lithium_based_batteries</a> <a href="#fnref:20" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:21" role="doc-endnote">
+<p>Using the energy consumption profiler in Visual Studio 2015 Community Update 3, StackOverflow, <a href="https://stackoverflow.com/a/40185263">https://stackoverflow.com/a/40185263</a>
+*[JVM]: Java Virtual Machine : machine virtuelle permettant d&rsquo;exécuter des programmes java <a href="#fnref:21" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:22" role="doc-endnote">
+<p>Equipe de recherche Spirals, <a href="https://team.inria.fr/spirals/">https://team.inria.fr/spirals/</a> <a href="#fnref:22" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:23" role="doc-endnote">
+<p>Power API, <a href="http://powerapi.org/">http://powerapi.org/</a> <a href="#fnref:23" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:24" role="doc-endnote">
+<p>Docker Hub of powerapi, <a href="https://hub.docker.com/u/powerapi">https://hub.docker.com/u/powerapi</a> <a href="#fnref:24" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:25" role="doc-endnote">
+<p>Jalen 2.0, 2014, <a href="https://github.com/adelnoureddine/jalen/tree/master/2.0">https://github.com/adelnoureddine/jalen/tree/master/2.0</a>
+*[PID]: Process Identifier, identifiant du processus système
+*[INRIA]: Institut National de Recherche en Informatique et Automatique <a href="#fnref:25" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:26" role="doc-endnote">
+<p>Web Energy Archive , <a href="https://wea.greencodelab.org/fr/">https://wea.greencodelab.org/fr/</a> <a href="#fnref:26" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:27" role="doc-endnote">
+<p>CHAOS Research report, The Standish Group, <a href="https://www.projectsmart.co.uk/white-papers/chaos-report.pdf">https://www.projectsmart.co.uk/white-papers/chaos-report.pdf</a> <a href="#fnref:27" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:28" role="doc-endnote">
+<p>Manifesto for Agile Software Development, <a href="https://agilemanifesto.org/">https://agilemanifesto.org/</a> <a href="#fnref:28" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:29" role="doc-endnote">
+<p>Comité Français du Test Logiciel, <a href="http://www.cftl.fr/">http://www.cftl.fr/</a> <a href="#fnref:29" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:30" role="doc-endnote">
+<p>Label Numérique Responsable, <a href="https://label-nr.fr/comment/#referentiel">https://label-nr.fr/comment/#referentiel</a> <a href="#fnref:30" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='last-updated'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34" />
+  <polygon points="18 2 22 6 12 16 8 16 8 12 18 2" />
+  
+</svg>
+<span class='screen-reader-text'>: </span>
+      <time class='entry-date' datetime='2020-04-14T17:00:05&#43;02:00'>2020, Apr 14</time>
+    </div><div class='categories'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
+  
+</svg>
+<span class='screen-reader-text'>Catégories: </span><a class='category' href='/categories/%C3%A9co-conception/'>éco-conception</a>, <a class='category' href='/categories/school/'>school</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='next-entry sep-before'>
+      <a href='/posts/creation-site/'>
+        <span class='screen-reader-text'>Billet suivant: </span>Un site ? Pourquoi ? Comment ?<span aria-hidden='true'>Suivant <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><div class='copyright'>
+  <p> &copy; 2020 Amaury LUCAS </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script>
+
+</body>
+
+</html>
+

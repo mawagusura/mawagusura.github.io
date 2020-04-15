@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Amaury L.</title>
+    <link>https://mawagusura.github.io/page/</link>
+    <description>Recent content in Pages on Amaury L.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 14 Apr 2020 18:44:43 +0200</lastBuildDate>
+    
+	<atom:link href="https://mawagusura.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Portfolio</title>
+      <link>https://mawagusura.github.io/portfolio/</link>
+      <pubDate>Tue, 14 Apr 2020 18:44:43 +0200</pubDate>
+      
+      <guid>https://mawagusura.github.io/portfolio/</guid>
+      <description>Qui suis-je ? 👋 Salut, moi c&amp;rsquo;est Amaury ! Quelques infos en vrac sur moi :
+ 22 ans Ingénieur informatique Spécialité Logiciel et Systèmes d&amp;rsquo;informations Langues : très bon Anglais (TOEIC 985), Espagnol scolaire Permis B (et bientôt permis côtier) Ceinture noire de Judo, pratique l&amp;rsquo;escalade  Compétences : Ingénierie logicielle : Java, C#, Scala, JavaScript (nodeJS), SQL &amp;amp; NoSQL
+Architecture : SOA, Microservices, REST/SOAP, TDD, BDD, DDD, UML, MOM(Kafka, JMS)</description>
+    </item>
+    
+  </channel>
+</rss>

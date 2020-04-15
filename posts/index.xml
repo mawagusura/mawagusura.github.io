@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles on Amaury L.</title>
+    <link>https://mawagusura.github.io/posts/</link>
+    <description>Recent content in Articles on Amaury L.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 14 Apr 2020 17:00:05 +0200</lastBuildDate>
+    
+	<atom:link href="https://mawagusura.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Un site ? Pourquoi ? Comment ?</title>
+      <link>https://mawagusura.github.io/posts/creation-site/</link>
+      <pubDate>Tue, 14 Apr 2020 17:00:05 +0200</pubDate>
+      
+      <guid>https://mawagusura.github.io/posts/creation-site/</guid>
+      <description>Résumé : je me suis lancé dans la création d&amp;rsquo;un petit site personnel, en essayant d&amp;rsquo;appliquer les principes d&#39;éco-conception. Je reviens dans cet article sur ce processus
+ Premiers pas dans la réalisation d&amp;rsquo;un site personnel minimaliste Ah les porfolios &amp;hellip; devenus incontournables dans le milieu du web il y a déjà quelques années, il en existe de toutes sortes, de tous types, pour le meilleur comme pour le pire !</description>
+    </item>
+    
+    <item>
+      <title>Mémoire année M1</title>
+      <link>https://mawagusura.github.io/posts/memoire-m1/</link>
+      <pubDate>Wed, 10 Jul 2019 17:00:05 +0200</pubDate>
+      
+      <guid>https://mawagusura.github.io/posts/memoire-m1/</guid>
+      <description>Eco-conception et intégration des problématiques de performance énergétique dans les processus de développement logiciel Mémoire rédigé par Amaury LUCAS
+Apprenti au sein d&amp;rsquo;IBM - étudiant ingénieur à l&amp;rsquo;EFREI
+Avec le soutien de :
+ Boris LIGER, Maitre d&amp;rsquo;apprentissage Christian KHOURY, Tuteur enseignant Virginie GALLET, responsable CFA Didier ACHVAR, responsable EFREI  Introduction La deuxième moitié du 20e siècle marque l&amp;rsquo;avènement d&amp;rsquo;un nouveau mode de pensée économique et politique, dont la genèse se trouve dans le rapport du Club de Rome, publié en 1972 1.</description>
+    </item>
+    
+  </channel>
+</rss>
