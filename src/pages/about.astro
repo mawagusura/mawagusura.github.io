@@ -12,23 +12,24 @@ const meta = {
 
 <PageLayout meta={meta}>
 	<div class="space-y-6">
-		<section class="h-fit space-y-6 text-justify">
+		<h2 class="title">Hey there 👋</h2>
+
+		<section class="sm:flex">
 			<Image
 				alt={"Just a silly photo of myself holding a watermelon"}
 				src={profileImg}
 				loading={"eager"}
-				class={"float-right object-cover object-top h-48 w-32 sm:h-64 sm:w-48 ml-4 rounded"}
+				class={"float-right h-48 w-32 sm:float-none object-cover object-top sm:order-last sm:flex-1 ml-4 mb-4 sm:ml-8 rounded sm:max-h-72 sm:h-full sm:max-w-48"}
 			/>
-			<p>
-				Hi ! I'm Amaury, a software engineer from France and currently living in Copenhagen,
-				Denmark. I hold a master's degree in software engineering, with a focus on Cloud &
-				information systems.
+			<p class="prose prose-sm prose-cactus">
+				I'm Amaury, a software engineer from France and currently living in Copenhagen, Denmark. I
+				hold a master's degree in software engineering, with a focus on Cloud & information systems.
 				<br /> I have 7 years of experience in software developement & delivery, mainly working on backend
 				applications, systems and tooling.
-			</p>
-			<p>
-				On a more personal note, I do a lot of climbing (the official sport for people working in
-				tech), I like sailing, biking, and doing all kinds of DIY and woodworking.
+				<br />
+				<br />
+				On a more personal note, I do a lot of climbing (the official sport for people working in tech),
+				I like sailing, biking, and doing all kinds of DIY and woodworking.
 			</p>
 		</section>
 		<section aria-label="Experience" class="space-y-6">
