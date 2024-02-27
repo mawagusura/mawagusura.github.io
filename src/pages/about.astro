@@ -1,0 +1,103 @@
+---
+import profileImg from "@/assets/me_cropped.png";
+import PageLayout from "@/layouts/Base.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+const meta = {
+	description: "I'm a human being playing with computers to pay the rent",
+	title: "About",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<section class="h-fit space-y-6 text-justify">
+			<Image
+				alt={"Just a silly photo of myself holding a watermelon"}
+				src={profileImg}
+				loading={"eager"}
+				class={"float-right object-cover object-top h-48 w-32 sm:h-64 sm:w-48 ml-4 rounded"}
+			/>
+			<p>
+				Hi ! I'm Amaury, a software engineer from France and currently living in Copenhagen,
+				Denmark. I hold a master's degree in software engineering, with a focus on Cloud &
+				information systems.
+				<br /> I have 7 years of experience in software developement & delivery, mainly working on backend
+				applications, systems and tooling.
+			</p>
+			<p>
+				On a more personal note, I do a lot of climbing (the official sport for people working in
+				tech), I like sailing, biking, and doing all kinds of DIY and woodworking.
+			</p>
+		</section>
+		<section aria-label="Experience" class="space-y-6">
+			<h2 class="title">Experience</h2>
+
+			<ul class="list-inside space-y-2">
+				<li
+					class="flex flex-col justify-between gap-x-16 gap-y-2 rounded border-2 border-dashed p-4 sm:flex-row sm:items-center"
+				>
+					<p>Software engineer | <strong class="inline-block">Trendsales</strong></p>
+					<p class="flex justify-end space-x-2">
+						<span>2022-now</span>
+						<span class="inline-flex items-center">
+							<Icon name={"mdi:location"} is:inline={true} size={16} />
+							Copenhagen
+						</span>
+					</p>
+				</li>
+				<li
+					class="flex flex-col justify-between gap-x-16 gap-y-2 rounded border-2 border-dashed p-4 sm:flex-row sm:items-center"
+				>
+					<p>Software engineer | <strong class="inline-block">PSQR</strong></p>
+					<p class="flex justify-end space-x-2">
+						<span>2020-2022</span>
+						<span class="inline-flex items-center">
+							<Icon name={"mdi:location"} is:inline={true} size={16} />
+							Copenhagen
+						</span>
+					</p>
+				</li>
+				<li
+					class="flex flex-col justify-between gap-x-16 gap-y-2 rounded border-2 border-dashed p-4 sm:flex-row sm:items-center"
+				>
+					<p>Backend developer | <strong class="inline-block">IBM France</strong></p>
+					<p class="flex justify-end space-x-2">
+						<span>2019-2020</span>
+						<span class="inline-flex items-center">
+							<Icon name={"mdi:location"} is:inline={true} size={16} />
+							Paris
+						</span>
+					</p>
+				</li>
+
+				<li
+					class="flex flex-col justify-between gap-x-16 gap-y-2 rounded border-2 border-dashed p-4 sm:flex-row sm:items-center"
+				>
+					<p>ERP technical consultant | <strong class="inline-block">IBM France</strong></p>
+					<p class="flex justify-end space-x-2">
+						<span>2017-2019</span>
+						<span class="inline-flex items-center">
+							<Icon name={"mdi:location"} is:inline={true} size={16} />
+							Paris
+						</span>
+					</p>
+				</li>
+
+				<li
+					class="flex flex-col justify-between gap-x-16 gap-y-2 rounded border-2 border-dashed p-4 sm:flex-row sm:items-center"
+				>
+					<p>Intern Fullstack developer | <strong class="inline-block">sonovente.com</strong></p>
+					<p class="flex justify-end space-x-2">
+						<span>2017</span>
+						<span class="inline-flex items-center">
+							<Icon name={"mdi:location"} is:inline={true} size={16} />
+							Paris
+						</span>
+					</p>
+				</li>
+			</ul>
+		</section>
+	</div>
+</PageLayout>
