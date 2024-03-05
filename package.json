@@ -25,7 +25,7 @@
 		"typescript": "^5.3.3"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.4.1",
+		"@astrojs/check": "^0.5.6",
 		"@iconify-json/mdi": "^1.1.64",
 		"@resvg/resvg-js": "^2.6.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
