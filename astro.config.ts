@@ -13,7 +13,7 @@ import { expressiveCodeOptions } from "./src/site.config";
 // https://astro.build/config
 export default defineConfig({
 	// ! Please remember to replace the following site property with your own domain
-	site: "https://astro-cactus.chriswilliams.dev/",
+	site: "https://mawagusura.github.io",
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
 		rehypePlugins: [
