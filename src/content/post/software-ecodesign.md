@@ -3,7 +3,7 @@ title: "Software ecodesign: dodging the bullshit"
 publishDate: "2 apr 2024"
 updatedDate: "5 may 2024"
 tags: ["ecodesign", "english", "opinion"]
-draft: true
+draft: false
 description: "My story with software ecodesign, and where I stand now"
 ---
 
