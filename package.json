@@ -21,11 +21,11 @@
 		"satori": "0.10.11",
 		"satori-html": "^0.3.2",
 		"sharp": "^0.33.2",
-		"@astrojs/check": "^0.5.4",
+		"@astrojs/check": "^0.7.0",
 		"typescript": "^5.3.3"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.4.1",
+		"@astrojs/check": "^0.7.0",
 		"@iconify-json/mdi": "^1.1.64",
 		"@resvg/resvg-js": "^2.6.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
