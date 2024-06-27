@@ -25,6 +25,8 @@
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.7.0",
+		"@eslint/eslintrc": "^3.1.0",
+		"@eslint/js": "^9.5.0",
 		"@iconify-json/mdi": "^1.1.64",
 		"@resvg/resvg-js": "^2.6.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
@@ -44,6 +46,7 @@
 		"eslint-plugin-perfectionist": "^2.5.0",
 		"eslint-plugin-regexp": "^2.2.0",
 		"eslint-plugin-typescript-sort-keys": "^3.1.0",
+		"globals": "^15.6.0",
 		"mdast-util-to-string": "^4.0.0",
 		"postcss": "^8.4.35",
 		"postcss-html": "^1.6.0",
