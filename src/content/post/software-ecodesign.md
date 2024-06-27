@@ -9,7 +9,7 @@ description: "My story with software ecodesign, and where I stand now"
 
 ## Background
 
-My personal story with software ecodesign dates back to my student days in university. Back then, I was still relatively new to IT, and was trying to read a lot on IT good practices in general. I started following blogs and people on social networks, and eventually came across an article talking about the environmental impact of IT product and services. 
+My personal story with software ecodesign dates back to my student days in university. Back then, I was still relatively new to IT, and was trying to read a lot on IT good practices in general. I started following blogs and people on social networks, and eventually came across an article talking about the environmental impact of IT product and services.
 
 This was news to me, I hadn't really thought about the physical externalities that the IT industry could have, and to my great surprise (at the time), I learnt that its impacts were far from negligeable : the sector is estimated to be responsible for ~2-4% of the global CO2eq emissions.
 
@@ -20,7 +20,7 @@ As a student in software engineering, and as a person committed to minimize my i
 Ecodesign has been around for a while, and is a well-known objective and method to minimize the impact of a product or service on the environment in many industries. It's important here to remember that these impacts are not measured in MWh (quantity of electric energy consumed): electricity consumed during usage is not a final indicator. In order to get an holistic view on global impacts of a software product, we must take a step back and analyze it through its whole lifecycle, including all the dependencies required for this product to emerge (not talking about node_modules here!).
 We measure environmental footprints by specific KPIs : greenhouse gaz emissions, water consumption, abiotic resources consumption, contributions to acidification ...
 
-Software ecodesign designates all the method and practices used to mitigate some of its footprints. 
+Software ecodesign designates all the method and practices used to mitigate some of its footprints.
 
 ## Early days & Volunteering
 
@@ -68,7 +68,7 @@ Ecodesign is meaningless without purpose.
 
 ## My take now
 
-After all this time, I've narrowed down my approach to software ecodesign to a few, pragmatic core principles : 
+After all this time, I've narrowed down my approach to software ecodesign to a few, pragmatic core principles :
 
 - ecodesign is useless if you work for an oil company (for example)
 - use physical resources more efficiently, on both servers and clients : you will end up implementing ecodesign practices without even knowing it
@@ -77,4 +77,3 @@ After all this time, I've narrowed down my approach to software ecodesign to a f
 - don't prioritize DX (Developer Experience) over everything else: make compromises, with UX and performance having the biggest weights in the technical decision
 
 If you start considering the environmental impact(s) while developing software, you've already done 80% of the job. The last 20% consists of a lot of common sense, and good technical expertise on the technologies involved.
-

@@ -7,7 +7,6 @@ draft: true
 description: "Elements d'opinion : eco conception et d'autres choses aussi"
 ---
 
-
 On commence à avoir l'habitude du cherry-picking sur les sujets numérique et environnements, donc essayons de remettre un peu de contexte et de prendre un peu de hauteur.
 
 Y a t-il du green-washing sur l'éco-conception logicielle ? Certainement, et c'est à condamner. Mais a aucun moment ce green-washing ne saurait justifier un rejet de l'éco-conception logicielle en elle-meme. Il faut différencier la communication qui en est faite de la pratique en soi.
@@ -22,6 +21,7 @@ Commencons d'abord par dire que l'éco-conception ne se resume pas a réduire la
 Ici il est mention de l'éco-conception en général, mais la description qui en est faite ne concerne que la partie logicielle. Soit, concentrons nous sur cette dernière (l'éco-conception logicielle).
 
 De quoi parle t-on ? L'éco-conception, c'est prendre en compte les impacts environnementaux lors de la conception d'un produit / service. En l'occurence, les principaux impacts environnementaux du numérique sont les suivants :
+
 - émissions de gaz à effet de serre (kg CO2eq)
 - épuisement des ressources abiotiques naturelles (métaux et minerais)
 - épuisement des ressources abiotiques naturelles fossiles
@@ -38,5 +38,3 @@ On voit donc bien que l'éco-conception ne se résume pas à regarder la taille 
 Mais, attardons nous tout de meme sur l'énergie consommée par les autres composantes du système en phase d'utilisation, puisque la critique se porte majoritairement dessus.
 Que faire de l'argument de la localisation du data center ? Bon déjà commençons par rappeler que les serveurs en phase d'utilisation ne représentent qu'une petite partie de l'énergie globale consommée par le système (en phase d'utilisation toujours). Quand bien meme ils seraient alimentés par de l'énergie carbonée, les émissions de CO2eq globales de l'utilisation n'augmenteraient pas linéairement.
 Je passe sur le fait que le marché de l'énergie européen est interconnecté et que, par conséquent, il est fallacieux de raisonner en silot par pays (là encore ce n'est pas si simple ...), ou encore sur le fait que la majorité des fournisseurs de cloud offrent des garanties d'origine sur l'électricité qui alimente leurs DC (bien qu'il y aurait des choses à dire sur ces systèmes de garanties).
-
-
