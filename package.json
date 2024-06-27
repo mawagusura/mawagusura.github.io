@@ -10,22 +10,21 @@
 		"check": "astro check"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "2.1.1",
-		"@astrojs/rss": "4.0.5",
-		"@astrojs/sitemap": "3.0.5",
+		"@astrojs/mdx": "^3.1.2",
+		"@astrojs/rss": "^4.0.7",
+		"@astrojs/sitemap": "^3.1.6",
 		"@astrojs/tailwind": "5.1.0",
-		"astro": "4.2.4",
+		"astro": "^4.11.3",
 		"astro-expressive-code": "^0.32.4",
 		"astro-icon": "^1.1.0",
 		"rehype-external-links": "^3.0.0",
 		"satori": "0.10.11",
 		"satori-html": "^0.3.2",
 		"sharp": "^0.33.2",
-		"@astrojs/check": "^0.5.4",
 		"typescript": "^5.3.3"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.4.1",
+		"@astrojs/check": "^0.7.0",
 		"@iconify-json/mdi": "^1.1.64",
 		"@resvg/resvg-js": "^2.6.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
